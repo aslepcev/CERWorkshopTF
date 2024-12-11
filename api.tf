@@ -1,6 +1,6 @@
 resource "linode_instance" "k3s-api" {
   for_each = toset(var.specified_regions)
-  label     = "api-${each.key}"
+  label     = "${var.userid}-api-${each.key}"
   region    = each.key
   image     = "linode/ubuntu24.04"
   type      = "g6-standard-2"

@@ -1,6 +1,6 @@
 resource "linode_instance" "k3s-ai" {
   for_each = toset(var.specified_regions)
-  label     = "neuralmagic-${each.key}"
+  label     = "${var.userid}-ai-${each.key}"
   region    = each.key
   image     = "linode/ubuntu22.04"
   type      = "g6-standard-2"

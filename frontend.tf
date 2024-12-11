@@ -1,7 +1,7 @@
 resource "linode_instance" "k3s-frontend" {
   for_each = toset(var.specified_regions)
 
-  label     = "frontend-${each.key}"
+  label     = "${var.userid}-frontend-${each.key}"
   region    = each.key
   image     = "linode/ubuntu24.04"
   type      = "g6-standard-2"

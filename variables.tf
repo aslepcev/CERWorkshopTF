@@ -4,8 +4,8 @@ variable "linode_token" {
   sensitive   = true
 }
 
-variable "vmcount" {
-  default = 1
+variable "userid" {
+  default = "cer1"
 }
 
 variable "specified_regions" {
